@@ -84,11 +84,14 @@ body::-webkit-scrollbar {
   z-index: 1;
   transform: translateY(-50%);
   top: 50%;
+  animation: slide-out 0.3s;
+}
+#switch button:hover {
+  outline: 8px solid var(--high-light-color);
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.3s forwards;
 }
 
 #switch span {
@@ -182,5 +185,23 @@ footer a:hover {
   body {
     background: var(--bg-url-mobile) no-repeat top center/cover;
     height: 100%;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
